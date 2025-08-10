@@ -187,6 +187,22 @@ async function run() {
             res.send(result);
         })
 
+        //get Recent recommendations
+        app.get('/recommendations/recent', async (req, res) => {
+            try {
+                const result = await recommendationsCollection
+                    .find()
+                    .sort({ timestamp: -1 }) // latest first
+                    .limit(10)
+                    .toArray();
+
+                res.send(result);
+            } catch (err) {
+                console.error(err);
+                res.status(500).send({ error: "Failed to fetch recent recommendations" });
+            }
+        });
+
         // get specific id by queryId from recommendation collection
         app.get('/recommendations/queryId/:id', async (req, res) => {
             const id = req.params.id;
