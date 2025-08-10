@@ -179,7 +179,7 @@ async function run() {
 
 
 
-        //Recommendation related Apis
+        //Recommendation related Apis here
 
         //get all recommendations
         app.get('/recommendations', async (req, res) => {
