@@ -211,7 +211,7 @@ async function run() {
             res.send(result);
         });
 
-        // get specific id recommendation from collection
+        // get specific id recommendation from collection from DB
         app.get('/recommendations/:id', async (req, res) => {
             const id = req.params.id;
             const query = { _id: new ObjectId(id) };
