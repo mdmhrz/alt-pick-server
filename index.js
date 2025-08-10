@@ -203,7 +203,7 @@ async function run() {
             }
         });
 
-        // get specific id by queryId from recommendation collection
+        // get specific id by queryId from recommendation collection form DB
         app.get('/recommendations/queryId/:id', async (req, res) => {
             const id = req.params.id;
             const query = { queryId: id };
@@ -251,14 +251,6 @@ async function run() {
             const result = await recommendationsCollection.deleteOne(query);
             res.send(result)
         })
-
-
-
-
-
-
-
-
 
 
 
