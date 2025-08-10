@@ -131,7 +131,7 @@ async function run() {
             res.send(result)
         })
 
-        // recommendations count increment by patch
+        // recommendations count increment by patch method
         app.patch('/queries/increment/:id', async (req, res) => {
             const id = req.params.id;
 
