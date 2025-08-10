@@ -219,7 +219,7 @@ async function run() {
             res.send(result);
         })
 
-        // get recommendations by query/user/query creator email from collection
+        // get recommendations by query/user/query creator email from collection form BD
         app.get('/recommendations/creatorEmail/:email', verifyFirebaseToken, verifyTokenEmail, async (req, res) => {
             const email = req.params.email;
             const query = { userEmail: email };
